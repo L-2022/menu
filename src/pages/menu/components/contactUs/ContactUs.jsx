@@ -115,7 +115,7 @@ ${formData.email || formData.phone ? "You can contact me via " : ""}${formData.e
                                 className={`${styles.contact_us__input} ${errorMessages ? styles['contact_us__input--error'] : ''}`}
                                 id="email"
                                 type="email"
-                                placeholder="Your Email *"
+                                placeholder="Email *"
                                 value={formData.email}
                                 onChange={handleInputChange}
                         />
@@ -123,7 +123,7 @@ ${formData.email || formData.phone ? "You can contact me via " : ""}${formData.e
                                 className={`${styles.contact_us__input} ${errorMessages ? styles['contact_us__input--error'] : ''}`}
                                 id="phone"
                                 type="tel"
-                                placeholder="Your Phone *"
+                                placeholder="Phone *"
                                 value={formData.phone}
                                 onChange={handleInputChange}
                                 onInput={(e) => {
@@ -135,7 +135,7 @@ ${formData.email || formData.phone ? "You can contact me via " : ""}${formData.e
                                 id="message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                placeholder="Your Message *"
+                                placeholder="Message *"
                                 required
                         ></textarea>
                         <div className={styles.contact_us__actions}>
