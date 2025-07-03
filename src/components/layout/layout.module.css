@@ -1,0 +1,30 @@
+.layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0;
+}
+
+header {
+    display: grid;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: var(--header-height);
+    background-color: var(--colorBackgroundMain);
+}
+
+main {
+    background-color: var(--bgColor);
+    padding-top: var(--header-height);
+    flex-grow: 1;
+}
+
+footer {
+    /*height: var(--footer-height);*/
+    background-color: var(--colorBackgroundMain);
+}

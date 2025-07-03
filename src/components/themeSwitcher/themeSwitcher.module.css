@@ -1,0 +1,12 @@
+.switcher__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.switcher__button:hover {
+    transform: translateY(-1px);
+}
+
+

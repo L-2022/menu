@@ -1,0 +1,333 @@
+/* ===== MenuItem.jsx ===== */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.wrapper__text_center {
+  max-width: 1200px;
+  margin-top: 1rem;
+  /*margin: 0 auto;*/
+  text-align: center;
+}
+
+.wrapper__title {
+  font-size: var(--font-size-title);
+  font-family: var(--font-family-title);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--textColor);
+}
+
+.category_block {
+  margin-bottom: 40px;
+}
+
+.category_title {
+  font-size: var(--font-size-named-servise);
+  color: var(--textColor);
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.category_title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: var(--textColor);
+}
+
+.menu__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+/* ===== end MenuItem.jsx ===== */
+
+
+/* ===== DishCard.jsx ===== */
+.menu__card {
+  background-color: var(--primaryWhite);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.menu__card:hover {
+  transform: translateY(-5px);
+}
+
+.menu__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu__dish_name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  color: var(--primaryBlack);
+}
+
+.menu__info {
+  font-size: 0.95rem;
+  color: var(--primaryGrey);
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.menu__price_counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu__price {
+  font-weight: bold;
+  color: var(--color-logo);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.rate {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  padding: 2px 5px;
+  background-color: var(--primary-logo_black);
+  color: var(--textColor);
+  border-radius: 4px;
+}
+/* ===== end DishCard.jsx ===== */
+
+
+.item__rate {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  padding: 2px 5px;
+  background-color: rgb(153, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+/* ===== NutritionInfo.jsx ===== */
+.menu__nutrition_wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu__nutrition_button {
+  background-color: var(--primaryButtonColor);
+  color: var(--primaryWhite);
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu__nutrition_button:hover {
+  background-color: var(--primaryButtonHoverColor);
+}
+
+.menu__nutrition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  background-color: #e0dddd;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  /*max-height: 0;*/
+  /*overflow: hidden;*/
+  /*opacity: 0;*/
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.menu__nutrition.visible {
+  max-height: 200px;
+  opacity: 1;
+  overflow: visible;
+}
+
+/* --- Start Counter styles --- */
+
+.menu__counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.counter__button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.counter__button:hover {
+  background-color: #ccc;
+}
+
+.counter__value {
+  min-width: 24px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.counter__add_button {
+  background-color: var(--primaryGrey, #ef4934);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.counter__add_button:hover {
+  background-color: var(--secondaryButtonColor, #c53b29);
+}
+
+/* --- End Counter styles --- */
+
+
+/* ===== Badges (optional, global) ===== */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.badgeNew {
+  background-color: #28a745;
+}
+
+.badgeDiscount {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.badgeLimited {
+  background-color: #dc3545;
+}
+/* ===== end Badges ===== */
+
+
+/* Small devices (smartphones, 0 - 479px) */
+@media (max-width: 479px) {
+  .menu__card {
+    /*padding: 10px;*/
+    font-size: 14px;
+  }
+
+  .menu__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu__dish_name {
+    font-size: 16px;
+  }
+}
+
+/* Medium devices (landscape phones, small tablets, 480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .menu__card {
+    /*padding: 12px;*/
+    font-size: 15px;
+  }
+
+  .menu__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu__dish_name {
+    font-size: 18px;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu__group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .menu__dish_name {
+    font-size: 20px;
+  }
+}
+
+/* Laptops (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .menu__group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .menu__dish_name {
+    font-size: 22px;
+  }
+}
+
+/* Large desktops (1440px and up) */
+@media (min-width: 1440px) {
+  .menu__group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .menu__dish_name {
+    font-size: 24px;
+  }
+}
