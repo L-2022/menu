@@ -1,17 +1,32 @@
-// src/components/categoryButtons/CategoryButtons.jsx
 import React from 'react';
 import styles from './categoryButtons.module.css';
 
-const CategoryButtons = ({ categories, onCategoryClick }) => {
+const CategoryButtons = ({ categories }) => {
+    const handleAnyClick = (id) => {
+        setTimeout(() => {
+            const section = document.getElementById(id);
+            if (section) {
+                const header = document.querySelector('header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                const offsetTop = section.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        }, 250);
+    };
+
     return (
             <div className={styles.filters}>
-                {categories.map((section) => (
+                {categories?.map(({ id, category }) => (
                         <button
-                                key={section.id}
+                                key={id}
                                 className={styles.filter_button}
-                                onClick={() => onCategoryClick(section.category)}
+                                onClick={() => handleAnyClick(category)}
                         >
-                            {section.category}
+                            {category}
                         </button>
                 ))}
             </div>

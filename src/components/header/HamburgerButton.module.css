@@ -1,0 +1,42 @@
+.hamburger {
+    width: 4.5rem;
+    height: 3.5rem;
+    background-color: var(--gradient-secondary);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger_bar {
+    background-color: var(--btn-text);
+    height: 3px;
+    transition: 0.3s ease-in-out;
+}
+
+#burger-bar1 {
+    width: 60%;
+}
+
+#burger-bar2 {
+    width: 100%;
+}
+
+#burger-bar3 {
+    width: 60%;
+}
+
+.hamburger_animation1 {
+    transform: rotate(45deg) scaleX(1.7);
+    transform-origin: left;
+}
+
+.hamburger_animation2 {
+    transform: scaleX(0);
+}
+
+.hamburger_animation3 {
+    transform: rotate(-45deg) scaleX(1.7);
+    transform-origin: left;
+}

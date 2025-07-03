@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ThemeSwitcher from '../themeSwitcher';
 import styles from './Header.module.css';
 import { menuData, navBtn } from '../../pages/menu/data/menuData.js';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [visible, setVisible] = useState(true);
+    const prevScrollPosRef = useRef(window.scrollY); // ← заміна useState
     const categories = menuData.map(({ category }) => ({ id: category, label: category }));
+
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const currentScrollPos = window.scrollY;
+
     const handleResize = () => {
         if (window.innerWidth > 767) {
             setIsMenuOpen(false);
@@ -17,24 +18,22 @@ const Header = () => {
     };
 
     const handleScroll = () => {
-        // const currentScrollPos = window.scrollY;
-        if (currentScrollPos < 100) {
+        const currentScrollPos = window.scrollY;
+        const prevScrollPos = prevScrollPosRef.current;
+
+        if (currentScrollPos < 20) {
             setVisible(true);
         } else if (currentScrollPos > prevScrollPos) {
-            setVisible(false);
+            setVisible(false); // скрол вниз
         } else {
-            setVisible(true);
+            setVisible(true); // скрол вгору
         }
 
-        setPrevScrollPos(currentScrollPos);
+        prevScrollPosRef.current = currentScrollPos;
     };
 
     const handleAnyClick = (id) => {
         setIsMenuOpen(false);
-
-
-
-
         setTimeout(() => {
             const section = document.getElementById(id);
             if (window.scrollY > 1) {
@@ -43,10 +42,9 @@ const Header = () => {
                 setVisible(true);
             }
             if (section) {
-
                 const header = document.querySelector('header');
                 const headerHeight = header ? header.offsetHeight : 0;
-                const offsetTop = section.getBoundingClientRect().top + window.scrollY - headerHeight  ;
+                const offsetTop = section.getBoundingClientRect().top + window.scrollY - headerHeight;
 
                 window.scrollTo({
                     top: offsetTop,
@@ -56,7 +54,6 @@ const Header = () => {
         }, 250);
     };
 
-
     useEffect(() => {
         window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
@@ -64,7 +61,8 @@ const Header = () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [prevScrollPos]);
+    }, []);
+
 
     return (
             <header className={`${styles.header} ${!visible ? styles.header__hidden : ''}`}>
@@ -78,45 +76,46 @@ const Header = () => {
                             {/*</div>*/}
                         </div>
                     </div>
-                        <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle menu">
-                            &#9776;
-                        </button>
+                    <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle menu">
+                        {isMenuOpen ? '✕' : '☰'}
+                    </button>
 
-                        <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
-                            <div className={styles.menuGrid}>
-                                {isMenuOpen && (
-                                        <div className={styles.filtersColumn}>
-                                            <ul className={styles.navList}>
 
-                                                {categories.map(({ id, label }) => (
-                                                        <li key={id}>
-                                                            <button
-                                                                    className={styles.filter_button}
-                                                                    onClick={() => handleAnyClick(id)}
-                                                            >
-                                                                {label}
-                                                            </button>
-                                                        </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                )}
+                    <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
+                        <div className={styles.menuGrid}>
+                            {isMenuOpen && (
+                                    <div className={styles.filtersColumn}>
+                                        <ul className={styles.navList}>
 
-                                <div className={styles.navColumn}>
+                                            {categories.map(({ id, label }) => (
+                                                    <li key={id}>
+                                                        <button
+                                                                className={styles.filter_button}
+                                                                onClick={() => handleAnyClick(id)}
+                                                        >
+                                                            {label}
+                                                        </button>
+                                                    </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                            )}
 
-                                    <ul className={styles.navList}>
-                                        <li className={styles.wrapper__theme_switcher} onClick={() => setIsMenuOpen(false) }>
-                                            <ThemeSwitcher />
-                                        </li>
-                                        {navBtn.map(({ id, label }) => (
-                                                <li key={id}>
-                                                    <button onClick={() => handleAnyClick(id)}>{label}</button>
-                                                </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                            <div className={styles.navColumn}>
+
+                                <ul className={styles.navList}>
+                                    <li className={styles.wrapper__theme_switcher} onClick={() => setIsMenuOpen(false) }>
+                                        <ThemeSwitcher />
+                                    </li>
+                                    {navBtn.map(({ id, label }) => (
+                                            <li key={id}>
+                                                <button onClick={() => handleAnyClick(id)}>{label}</button>
+                                            </li>
+                                    ))}
+                                </ul>
                             </div>
-                        </nav>
+                        </div>
+                    </nav>
                 </div>
             </header>
     );

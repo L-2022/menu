@@ -13,7 +13,7 @@ const AppRouter = () => {
             >
                 <Routes>
                     <Route element={<Layout />}>
-                        <Route path={routes.services} element={<MenuPage />} />
+                        <Route path={routes.menu} element={<MenuPage />} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Route>
                 </Routes>

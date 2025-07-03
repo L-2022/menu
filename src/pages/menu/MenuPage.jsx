@@ -16,7 +16,6 @@ const MenuPage = () => {
                 <section id="about" className={styles.about}>
                     <AboutPage />
                 </section>
-
                 <section id="contact" className={styles.contact_us}>
                     <ContactUs />
                 </section>

@@ -111,6 +111,12 @@ html, body {
   font-family: var(--font-family-pt-serif);
 }
 
+/*html, body {*/
+/*  max-width: 100%;*/
+/*  overflow-x: hidden;*/
+/*}*/
+
+
 ol,
 ul {
   list-style: none;
