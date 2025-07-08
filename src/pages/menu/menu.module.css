@@ -51,8 +51,17 @@
     }
 }
 
-@media (min-width: 1440px) {
-    .wrapper {
-        margin: 0 100px;
+
+
+@media (max-width: 768px) {
+    .services,
+    .selected_services,
+    .contact_info,
+    .contact_us
+    {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: minmax(150px, 700px);
+
     }
 }

@@ -25,6 +25,7 @@ const Header = () => {
             setVisible(true);
         } else if (currentScrollPos > prevScrollPos) {
             setVisible(false); // скрол вниз
+            setIsMenuOpen(false);
         } else {
             setVisible(true); // скрол вгору
         }

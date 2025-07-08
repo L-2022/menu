@@ -221,3 +221,19 @@ button:focus {
   outline: none;
 }
 
+/* Confirm Button Hover (Yes, clear it) */
+.swal2-confirm:hover {
+  background-color: #c41212 !important;
+  color: white !important;
+}
+
+/* Cancel Button Hover (Cancel) */
+.swal2-cancel:hover {
+  background-color: #888 !important;
+  color: white !important;
+}
+
+.swal2-confirm,
+.swal2-cancel {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
