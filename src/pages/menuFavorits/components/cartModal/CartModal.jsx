@@ -69,7 +69,7 @@ const CartModal = ({ isOpen, onClose, quantities, menuData }) => {
             <div className={styles.overlay} onClick={onClose}>
                 <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                     <div className={styles.header}>
-                        <h2>Your Orders</h2>
+                        <h1>Your Orders</h1>
                         <div className={styles.buttons}>
                             <button className={styles.clearBtn} onClick={handleClearCart}>Clear All</button>
                             <button className={styles.closeBtn} onClick={onClose}>Close</button>

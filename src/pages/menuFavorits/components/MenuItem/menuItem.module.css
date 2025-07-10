@@ -28,6 +28,7 @@
 
 .category_title {
   font-size: var(--font-size-named-servise);
+  font-family: var(--font-family-title);
   color: var(--textColor);
   font-weight: 700;
   margin-bottom: 40px;
@@ -66,7 +67,7 @@
   transition: transform 0.3s ease;
   width: 100%;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .menu__card:hover {
@@ -85,17 +86,37 @@
   font-weight: 600;
   padding: 0.5rem 1rem;
   color: var(--primaryBlack);
+  font-family: var(--font-family-title);
 }
 
+
+/* === start menu info */
 .menu__info {
-  font-size: 0.95rem;
+  text-align: justify;
   color: var(--primaryGrey);
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  text-align: left;
+  gap: 0.3rem;
+  font-weight: 600;
 }
+
+.dish__weight {
+
+}
+
+.dish__ingredients {
+  font-family: var(--font-family-description);
+}
+
+.dish__count {
+
+}
+
+.dish__size {
+
+}
+
 
 .menu__price_counter {
   display: flex;
@@ -235,11 +256,12 @@
 }
 
 .counter__value {
-  min-width: 28px;
+  min-width: 40px;
   text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #ef4934;
+  /*font-size: 1.5rem;*/
+  font-size: clamp(1.2rem, 4vw, 2.2rem);
+  color: var(--color-accent);
+  margin-bottom: 10px;
 }
 
 .counter__add_button {

@@ -82,13 +82,17 @@
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.activeLink {
-  color: var(--secondaryButtonColor);
+.filter_button {
+  text-align: left;
 }
 
-.inactiveLink {
-  color: var(--textColor);
-}
+/*.activeLink {*/
+/*  color: var(--secondaryButtonColor);*/
+/*}*/
+
+/*.inactiveLink {*/
+/*  color: var(--textColor);*/
+/*}*/
 
 .navList a:hover {
   color: var(--color-accent);

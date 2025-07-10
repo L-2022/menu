@@ -22,18 +22,16 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                 <h1 className={styles.menu__dish_name}>{dish.title}</h1>
 
                 <div className={styles.menu__info}>
-                    {dish.weight && <div><strong>Weight:</strong> {dish.weight}</div>}
-                    {dish.ingredients && <div>{dish.ingredients}</div>}
-                    {dish.count && <div><strong>Quantity:</strong> {dish.count}</div>}
-                    {dish.size && <div><strong>Size:</strong> {dish.size}</div>}
+                    {dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight}</div>}
+                    {dish.ingredients && <div className={styles.dish__ingredients}>{dish.ingredients}</div>}
+                    {dish.count && <div className={styles.dish__count}><strong>Quantity:</strong> {dish.count}</div>}
+                    {dish.size && <div className={styles.dish__size}><strong>Size:</strong> {dish.size}</div>}
                     <div className={styles.menu__price_counter}>
                         {dish.price && (
                                 <div className={styles.menu__price}>
                                     {dish.price} {otherInfo.currency}
                                 </div>
                         )}
-
-                        {/*{dish.price && <div className={styles.menu__price}>{dish.price}{" "}{otherInfo.currency}</div>}*/}
                         <Counter
                                 quantity={quantity}
                                 onIncrease={(e) => {
@@ -60,20 +58,16 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                     {dish.nutrition && showNutrition && !isInCart && (
                             <div className={styles.menu__nutrition}>
                                 <div className={styles.menu__nutrition_item}>
-                                    <span>Calories:</span>
-                                    <span>{dish.nutrition.calories}</span>
+                                    <span>Calories: {dish.nutrition.calories}</span>
                                 </div>
                                 <div className={styles.menu__nutrition_item}>
-                                    <span>Protein:</span>
-                                    <span>{dish.nutrition.protein}</span>
+                                    <span>Protein: {dish.nutrition.protein}</span>
                                 </div>
                                 <div className={styles.menu__nutrition_item}>
-                                    <span>Fat:</span>
-                                    <span>{dish.nutrition.fat}</span>
+                                    <span>Fat: {dish.nutrition.fat}</span>
                                 </div>
                                 <div className={styles.menu__nutrition_item}>
-                                    <span>Carbs:</span>
-                                    <span>{dish.nutrition.carbs}</span>
+                                    <span>Carbs: {dish.nutrition.carbs}</span>
                                 </div>
                             </div>
                     )}

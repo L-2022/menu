@@ -11,12 +11,17 @@
 }
 
 :root {
-  --font-family-title: "Montserrat", serif;
+  --font-family-pt-serif: "PT Serif", serif;
+  --font-family-playfair: "Playfair Display", serif;
+  --font-family-raleway: "Raleway", sans-serif;
+  --font-family-open-sans-condensed: "Open Sans Condensed", sans-serif;
+  --font-family-montserrat-condensed: "Montserrat Condensed", sans-serif;
   --font-family-body: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  --font-family-service-title: "Playfair Display", serif;
-  --font-family-service-description: "Lora", serif;
-  --font-family-pt-serif: "PT Serif", serif;
+  --font-family-title: var(--font-family-raleway);
+  --font-family-description: var(--font-family-open-sans-condensed);
+  --font-family-content: var(--font-family-pt-serif);
+
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +37,7 @@
   --primary-logo_black: rgb(28, 50, 169);
   --primary-color: #CCC;
   --primaryWhite: #FFF;
-  --primaryGrey: #656565;
+  --primaryGrey: #565656;
   --primaryBlack: #2c2c2c;
   --lightGrey: #CCC;
   --colorGreenDark: #417257;
@@ -45,16 +50,30 @@
   --secondaryGrey: #E1E1E1;
   --greyHover: #F1F1F1;
 
-  --font-size-title: 1.75rem;
-  --font-size-heading: 1.25rem;
-  --font-size-subheading: 1.125rem;
-  --font-size-body: 0.875rem;
-  --font-size-small: 0.75rem;
+  /*--font-size-title: 1.75rem;*/
+  /*--font-size-heading: 1.25rem;*/
+  /*--font-size-subheading: 1.125rem;*/
+  /*--font-size-body: 0.875rem;*/
+  /*--font-size-small: 0.75rem;*/
 
-  --font-size-named-servise: 1.5rem;
+  /* ✅ Адаптивні розміри шрифтів */
+  --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);   /* 12–14px */
+  --font-size-sm: clamp(0.875rem, 2vw, 1rem);        /* 14–16px */
+  --font-size-md: clamp(1rem, 2.5vw, 1.25rem);       /* 16–20px */
+  --font-size-lg: clamp(1.25rem, 3vw, 1.75rem);      /* 20–28px */
+  --font-size-xl: clamp(1.75rem, 4vw, 2.5rem);       /* 28–40px */
+
+  /* ✅ Семантичні назви розмірів */
+  --font-size-body: var(--font-size-sm);
+  --font-size-title: var(--font-size-lg);
+  --font-size-subtitle: var(--font-size-md);
+  --font-size-caption: var(--font-size-xs);
+  --font-size-hero: var(--font-size-xl);
+
+  --font-size-named-servise: var(--font-size-xl);   /* для .category_title */
   --font-size-detailed-description: 1.125rem;
-  --font-size-basic: 0.8125rem;
-  --font-size-caption: 0.6875rem;
+  --font-size-basic: var(--font-size-sm);
+
 }
 
 @media (max-width: 480px) {
@@ -106,41 +125,44 @@
   --themeSwitcher: var(--primaryWhite);
 }
 
-html, body {
+/* ======= Базові стилі ======= */
+html,
+body {
   height: 100%;
-  font-family: var(--font-family-pt-serif);
-}
-
-/*html, body {*/
-/*  max-width: 100%;*/
-/*  overflow-x: hidden;*/
-/*}*/
-
-
-ol,
-ul {
-  list-style: none;
-}
-
-p {
+  font-family: var(--font-family-playfair);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bgColor, #fff);
   color: var(--textColor);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ======= Текст ======= */
+p {
   margin: 0;
   font-weight: 400;
   font-size: var(--font-size-body);
+  color: var(--textColor);
 }
 
 h1 {
   margin: 0;
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 600;
+  font-size: var(--font-size-title);
 }
 
 h2 {
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
   font-weight: 400;
+  font-size: var(--font-size-subtitle);
 }
 
+/* ======= Кнопки та інпути ======= */
 button {
   border: none;
   outline: none;
@@ -148,10 +170,16 @@ button {
   cursor: pointer;
   padding: 0;
   background-color: transparent;
+  color: var(--textColor);
+  font-family: inherit;
 }
 
-button {
-  color: var(--textColor);
+/* ======= Списки ======= */
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 button:hover {
@@ -168,12 +196,13 @@ button:hover {
   outline: none;
 }
 
+
 input {
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  padding-block: unset;
   background-color: transparent;
+  font-family: inherit;
 }
 
 input:-webkit-autofill,

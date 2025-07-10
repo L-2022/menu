@@ -16,8 +16,13 @@
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s;
+
 }
 
 .filter_button:hover {
     background-color: var(--primaryButtonHoverColor);
+}
+
+.filter_button * {
+    text-align: left;
 }

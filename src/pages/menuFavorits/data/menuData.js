@@ -12,15 +12,202 @@ import scrambled_bacon_thumb from '../images/menu/salads/salad (3).webp';
 import caesar_salmon_thumb from '../images/menu/salads/salad (4).webp';
 import caesar_chicken_thumb from '../images/menu/salads/caesar_chicken_thumb.webp';
 // Soups
-import miso_soup_thumb from '../images/menu/salads/salad (1).webp';
 import chicken_broth_thumb from '../images/menu/salads/salad (2).webp';
 import mushroom_soup_thumb from '../images/menu/salads/salad (3).webp';
 
-export const otherInfo = {
-    currency: '$',
-};
+// Non-Alcoholic Beverages
+import orange_fresh_thumb from '../images/menu/NonAlcoholicBeverages/orange_fresh_thumb.jpg';
+import apple_fresh_thumb from '../images/menu/NonAlcoholicBeverages/apple_fresh_thumb.jpg';
+import carrot_fresh_thumb from '../images/menu/NonAlcoholicBeverages/carrot_fresh_thumb.jpg';
+import apple_carrot_fresh_thumb from '../images/menu/NonAlcoholicBeverages/apple_carrot_fresh_thumb.jpg';
+
+
+// Sandwiches
+import ham_sandwich_thumb from '../images/menu/Sandwiches/ham_sandwich_thumb.webp';
+import turkey_sandwich_thumb from '../images/menu/Sandwiches/ham_sandwich_thumb.webp';
+
+// Desserts
+
+import panna_cotta_mango_thumb from '../images/menu/Desserts/panna_cotta_mango_thumb.webp';
+import waffle_condensed_milk_thumb from '../images/menu/Desserts/panna_cotta_mango_thumb.webp';
+
+//Main Dishes
+import steak_dinner_thumb from '../images/menu/Main Dishes/steak_dinner_thumb.jpg';
+import potatoes_meat_thumb from '../images/menu/Main Dishes/potatoes_meat_thumb.jpg';
+import fish_steak_thumb from '../images/menu/Main Dishes/fish_steak_thumb.jpg';
+
+// Starters/
+import fancy_toast_thumb from '../images/menu/Starters/fancy_toast_thumb.jpg';
 
 export const menuData = [
+    {
+        id: 105,
+        category: 'Starters',
+        items: [
+            {
+                id: 110,
+                title: 'Fancy Toast',
+                imgSrc: fancy_toast_thumb,
+                price: '85',
+                ingredients: 'Toasted sourdough, avocado spread, cherry tomatoes, poached egg, herbs',
+                weight: '180 g',
+                diameter: null,
+                quantityOptions: '1 slice',
+                nutrition: {
+                    calories: '320 kcal',
+                    protein: '10 g',
+                    fat: '18 g',
+                    carbs: '28 g',
+                },
+            },
+        ],
+    },
+    {
+        id: 101,
+        category: 'Sandwiches',
+        items: [
+            {
+                id: 101,
+                title: 'Ham Sandwich',
+                imgSrc: ham_sandwich_thumb,
+                price: '95',
+                ingredients: 'White bread, ham, cheese, lettuce, tomato, butter',
+                weight: '220 g',
+                diameter: null,
+                quantityOptions: '1 sandwich',
+                nutrition: {
+                    calories: '420 kcal',
+                    protein: '20 g',
+                    fat: '18 g',
+                    carbs: '40 g',
+                },
+            },
+            {
+                id: 102,
+                title: 'Turkey Sandwich',
+                imgSrc: turkey_sandwich_thumb,
+                price: '105',
+                ingredients: 'Whole grain bread, turkey breast, lettuce, tomato, mayonnaise, mustard',
+                weight: '230 g',
+                diameter: null,
+                quantityOptions: '1 sandwich',
+                nutrition: {
+                    calories: '450 kcal',
+                    protein: '25 g',
+                    fat: '16 g',
+                    carbs: '42 g',
+                },
+            },
+        ]
+    },
+    {
+        id: 102,
+        category: 'Non-Alcoholic Beverages',
+        items: [
+            {
+                id: 103,
+                title: 'Orange Fresh Juice',
+                imgSrc: orange_fresh_thumb,
+                price: '4.50',
+                ingredients: 'Freshly squeezed orange juice',
+                weight: '250 ml',
+                diameter: null,
+                quantityOptions: '1 glass',
+                nutrition: {
+                    calories: '110 kcal',
+                    protein: '2 g',
+                    fat: '0.5 g',
+                    carbs: '25 g',
+                },
+            },
+            {
+                id: 104,
+                title: 'Apple Fresh Juice',
+                imgSrc: apple_fresh_thumb,
+                price: '4.00',
+                ingredients: 'Freshly squeezed apple juice',
+                weight: '250 ml',
+                diameter: null,
+                quantityOptions: '1 glass',
+                nutrition: {
+                    calories: '105 kcal',
+                    protein: '0.5 g',
+                    fat: '0.3 g',
+                    carbs: '26 g',
+                },
+            },
+            {
+                id: 105,
+                title: 'Carrot Fresh Juice',
+                imgSrc: carrot_fresh_thumb,
+                price: '4.00',
+                ingredients: 'Freshly squeezed carrot juice',
+                weight: '250 ml',
+                diameter: null,
+                quantityOptions: '1 glass',
+                nutrition: {
+                    calories: '95 kcal',
+                    protein: '1.5 g',
+                    fat: '0.2 g',
+                    carbs: '22 g',
+                },
+            },
+            {
+                id: 106,
+                title: 'Apple-Carrot Fresh Juice',
+                imgSrc: apple_carrot_fresh_thumb,
+                price: '4.75',
+                ingredients: 'Blend of freshly squeezed apple and carrot juice',
+                weight: '250 ml',
+                diameter: null,
+                quantityOptions: '1 glass',
+                nutrition: {
+                    calories: '100 kcal',
+                    protein: '1.2 g',
+                    fat: '0.3 g',
+                    carbs: '24 g',
+                },
+            },
+        ]
+    },
+    {
+        id: 103,
+        category: 'Desserts',
+        items: [
+            {
+                id: 107,
+                title: 'Panna Cotta with Mango Puree',
+                imgSrc: panna_cotta_mango_thumb,
+                price: '95',
+                ingredients: 'Cream, sugar, gelatin, vanilla, mango puree',
+                weight: '160 g',
+                diameter: null,
+                quantityOptions: '1 portion',
+                nutrition: {
+                    calories: '280 kcal',
+                    protein: '3 g',
+                    fat: '18 g',
+                    carbs: '26 g',
+                },
+            },
+            {
+                id: 111,
+                title: 'Waffle with Condensed Milk',
+                imgSrc: waffle_condensed_milk_thumb,
+                price: '75',
+                ingredients: 'Crispy waffle topped with sweet condensed milk',
+                weight: '160 g',
+                diameter: null,
+                quantityOptions: '1 piece',
+                nutrition: {
+                    calories: '380 kcal',
+                    protein: '6 g',
+                    fat: '15 g',
+                    carbs: '55 g',
+                },
+            },
+        ]
+    },
     {
         id: 1,
         category: 'Main Dishes',
@@ -44,22 +231,6 @@ export const menuData = [
                 },
             },
             {
-                id: 2,
-                title: 'Miso soup',
-                imgSrc: miso_soup_thumb,
-                fullImgSrc: miso_soup_thumb,
-                price: '110',
-                ingredients: 'Traditional Japanese broth with tofu, seaweed, and green onion',
-                weight: '250 g',
-                quantityOptions: '1 bowl',
-                nutrition: {
-                    calories: '90 kcal',
-                    protein: '5 g',
-                    fat: '3 g',
-                    carbs: '10 g',
-                },
-            },
-            {
                 id: 3,
                 title: 'Fresh pepperoni',
                 imgSrc: pepperoni_thumb,
@@ -74,6 +245,54 @@ export const menuData = [
                     protein: '30 g',
                     fat: '35 g',
                     carbs: '90 g',
+                },
+            },
+            {
+                id: 108,
+                title: 'Steak Dinner',
+                imgSrc: steak_dinner_thumb,
+                price: '285',
+                ingredients: 'Grilled beef steak, mashed potatoes, green beans, steak sauce',
+                weight: '450 g',
+                diameter: null,
+                quantityOptions: '1 portion',
+                nutrition: {
+                    calories: '720 kcal',
+                    protein: '48 g',
+                    fat: '38 g',
+                    carbs: '42 g',
+                },
+            },
+            {
+                id: 109,
+                title: 'Potatoes with Meat',
+                imgSrc: potatoes_meat_thumb,
+                price: '165',
+                ingredients: 'Roasted potatoes with stewed pork, onions, carrots, and herbs',
+                weight: '400 g',
+                diameter: null,
+                quantityOptions: '1 portion',
+                nutrition: {
+                    calories: '610 kcal',
+                    protein: '32 g',
+                    fat: '28 g',
+                    carbs: '50 g',
+                },
+            },
+            {
+                id: 112,
+                title: 'Fish Steak',
+                imgSrc: fish_steak_thumb,
+                price: '245',
+                ingredients: 'Grilled salmon steak, lemon butter sauce, steamed vegetables',
+                weight: '380 g',
+                diameter: null,
+                quantityOptions: '1 portion',
+                nutrition: {
+                    calories: '540 kcal',
+                    protein: '42 g',
+                    fat: '30 g',
+                    carbs: '18 g',
                 },
             },
         ]
@@ -280,8 +499,7 @@ export const menuData = [
             {
                 id: 20,
                 title: 'Miso soup',
-                imgSrc: miso_soup_thumb,
-                fullImgSrc: miso_soup_thumb,
+                imgSrc: mushroom_soup_thumb,
                 price: '110',
                 ingredients: 'Traditional Japanese broth with tofu, seaweed, and green onion',
                 weight: '250 g',
@@ -326,11 +544,15 @@ export const menuData = [
                 },
             },
         ],
-    }
+    },
+
 
 
 ];
 
+export const otherInfo = {
+    currency: '$',
+};
 
 export const navBtn = [
     { id: 'menu', label: 'Menu' },

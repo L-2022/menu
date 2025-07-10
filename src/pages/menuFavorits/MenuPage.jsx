@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutPage from './components/about';
-import ServicesList from './components/servicesList';
+import MenuList from './components/MenuList';
 import ContactUs from "./components/contactUs/index.js";
 import ContactInfo from "./components/contactInfo";
 import SelectedService from "./components/selectedService/index.js";
@@ -11,7 +11,7 @@ const menuPageEx1 = () => {
     return (
             <div className={styles.wrapper}>
                 <section id="menu" className={styles.services}>
-                    <ServicesList/>
+                    <MenuList/>
                 </section>
                 <section id="about" className={styles.about}>
                     <AboutPage />

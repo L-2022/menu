@@ -5,7 +5,7 @@ import { menuData } from '../../data/menuData.js';
 import MenuItem from "../MenuItem/index.js";
 import Title from "../../../../components/title";
 
-const ServicesList = () => {
+const MenuList = () => {
     // const schemaData = servicesSchema(menuData); // created JSON-LD for Schema.org
 
     return (
@@ -21,4 +21,4 @@ const ServicesList = () => {
     );
 };
 
-export default ServicesList;
+export default MenuList;

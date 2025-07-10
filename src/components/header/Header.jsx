@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ThemeSwitcher from '../themeSwitcher';
 import styles from './Header.module.css';
-import { menuData, navBtn } from '../../pages/menu/data/menuData.js';
+import { menuData, navBtn } from '../../pages/menuFavorits/data/menuData.js';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,10 +71,6 @@ const Header = () => {
                     <div className={styles.header__inner_left}>
                         <div className={styles.header__logo}>
                             <p className={styles.logo}>The Virtual Table</p>
-                            {/*<div className={styles.logo__text_wrapper}>*/}
-                            {/*    <div className={styles.logo__assembly}>assembly</div>*/}
-                            {/*    <div className={styles.logo__oronto}>oronto</div>*/}
-                            {/*</div>*/}
                         </div>
                     </div>
                     <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle menu">
