@@ -22,7 +22,22 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                 <h1 className={styles.menu__dish_name}>{dish.title}</h1>
 
                 <div className={styles.menu__info}>
-                    {dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight}</div>}
+                    <div className={styles.menu__price_counter}>
+                        {dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight} </div>}
+                        {dish.nutrition && !isInCart && (
+                                <div className={styles.menu__nutrition_wrapper}>
+                                    <button
+                                            className={styles.menu__nutrition_button}
+                                            onClick={toggleNutrition}
+                                    >
+                                        Nutrition
+                                    </button>
+                                </div>
+                        )}
+                    </div>
+
+
+                    {/*{dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight} </div>}*/}
                     {dish.ingredients && <div className={styles.dish__ingredients}>{dish.ingredients}</div>}
                     {dish.count && <div className={styles.dish__count}><strong>Quantity:</strong> {dish.count}</div>}
                     {dish.size && <div className={styles.dish__size}><strong>Size:</strong> {dish.size}</div>}
@@ -43,16 +58,16 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                     changeQuantity(dish.id, -1);
                                 }}
                         />
-                        {dish.nutrition && !isInCart && (
-                                <div className={styles.menu__nutrition_wrapper}>
-                                    <button
-                                            className={styles.menu__nutrition_button}
-                                            onClick={toggleNutrition}
-                                    >
-                                        Nutrition
-                                    </button>
-                                </div>
-                        )}
+                        {/*{dish.nutrition && !isInCart && (*/}
+                        {/*        <div className={styles.menu__nutrition_wrapper}>*/}
+                        {/*            <button*/}
+                        {/*                    className={styles.menu__nutrition_button}*/}
+                        {/*                    onClick={toggleNutrition}*/}
+                        {/*            >*/}
+                        {/*                Nutrition*/}
+                        {/*            </button>*/}
+                        {/*        </div>*/}
+                        {/*)}*/}
                     </div>
 
                     {dish.nutrition && showNutrition && !isInCart && (

@@ -1,9 +1,10 @@
 .container {
-    color: #ffffff;
+    color: var(--primaryWhite);
     text-align: center;
     width: 100%;
     /*background-color: var(--colorBackgroundMain);*/
     background-color: var(--bgColor);
+    font-size: var(--font-size-subtitle);
 }
 
 .columnsWrapper {
@@ -20,10 +21,12 @@
 }
 
 .text {
-    font-size: 18px;
+    font-size: var(--font-size-title);
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
+    font-family: var(--font-family-title);
+    color: var(--textColor);
 }
 
 .socialList {
@@ -44,7 +47,10 @@
     color: var(--textColor);
     margin-top: 10px;
     display: grid;
-    gap: 10px
+    gap: 10px;
+    font-family: var(--font-family-content);
+    font-weight: 400;
+    text-decoration: none;
 }
 
 .telItem a:hover {
@@ -53,7 +59,7 @@
 
 .socialLink {
     color: var(--textColor);
-    font-size: 35px;
+    font-size: 2.2rem;
     transition: color 0.3s ease;
 }
 
@@ -65,10 +71,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 15px;
     text-align: center;
     line-height: 1.6;
     color: var(--textColor);
+    font-family: var(--font-family-content);
 }
 
 .map {
@@ -83,14 +89,15 @@
 
 .address {
     margin-top: 5px;
-    font-size: 14px;
     color: var(--textColor);
+    font-family: var(--font-family-content);
+    font-size: var(--font-size-subtitle);
 }
 
 .copyright {
     margin-top: 10px;
-    font-size: 15px;
     color: var(--textColor);
+    font-family: var(--font-family-content);
 }
 
 @media (min-width: 768px) {
@@ -108,9 +115,6 @@
 }
 
 @media (max-width: 480px) {
-    .copyright {
-        font-size: 10px;
-    }
 
     .map {
         max-width: 100%;

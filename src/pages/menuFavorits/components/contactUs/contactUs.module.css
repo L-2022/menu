@@ -11,7 +11,7 @@
 .contact_us__textarea {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: var(--font-size-basic);
   border: 1px solid var(--colorGreenDark);
   border-radius: 5px;
   background-color: transparent;
@@ -42,13 +42,11 @@
   color: var(--textColor);
 }
 
-
 .contact_us__error_messages {
   color: var(--textColor);
   text-align: center;
-  font-size: 1rem;
+  font-size: var(--font-size-basic);
   height: 20px;
-
 }
 
 .contact_us__error_messages p {
@@ -78,7 +76,7 @@
 
   .contact_us__input,
   .contact_us__textarea {
-    font-size: 22px;
+    font-size: var(--font-size-lg);
     border: 2px solid var(--colorGreenDark);
   }
 
@@ -94,7 +92,7 @@
 
   .contact_us__error_messages {
     margin: 5px 10px 5px 0;
-    font-size: 1.5rem;
+    font-size: var(--font-size-title);
   }
 
   .contact_us__button {
@@ -102,7 +100,3 @@
     border-radius: 5px;
   }
 }
-
-
-
-

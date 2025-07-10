@@ -13,12 +13,12 @@
 
 .item__icon {
   font-size: 1.8rem;
-  color: #aaaaaa;
+  color: var(--primaryGrey);
 }
 
 .icon:hover {
   transform: scale(1.1);
-  color: #ff6f61;
+  color: var(--color-accent);
 }
 
 .title {
@@ -28,12 +28,12 @@
 }
 
 .text:hover {
-  color: #ff6f61;
+  color: var(--color-accent);
 }
 
 .text {
   margin: 5px 0 0;
-  font-size: var(--font-size-heading);
+  font-size: var(--font-size-subtitle);
 }
 
 .link {
@@ -65,12 +65,12 @@
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: var(--font-size-md);
   }
 
   .text {
     margin: 5px 0 0;
-    font-size: 0.8rem;
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -88,10 +88,10 @@
   }
 
   .title {
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
   }
 
   .text {
-    font-size: 0.7rem;
+    font-size: var(--font-size-caption);
   }
 }

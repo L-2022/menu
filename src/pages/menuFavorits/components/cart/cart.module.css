@@ -2,11 +2,11 @@
     position: fixed;
     top: 80px;
     right: 20px;
-    background-color: #ef4934;
+    background-color: var(--color-accent);
     color: var(--primaryWhite);
     padding: 10px 20px;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 200;

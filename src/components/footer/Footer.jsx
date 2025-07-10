@@ -62,7 +62,7 @@ const Footer = () => {
                                 loading="lazy"
                                 title="Location Map"
                         />
-                        {/*<p className={styles.address}>Toronto, Canada</p>*/}
+                        <p className={styles.address}>Toronto, Canada.</p>
                     </div>
                     <div className={styles.column}>
                         <p className={styles.text}>Working Hours:</p>

@@ -27,7 +27,7 @@
 }
 
 .category_title {
-  font-size: var(--font-size-named-servise);
+  font-size: var(--font-size-title);
   color: var(--textColor);
   font-weight: 700;
   margin-bottom: 40px;

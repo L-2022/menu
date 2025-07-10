@@ -14,12 +14,10 @@
 .services,
 .selected_services,
 .contact_info,
-.contact_us
-{
+.contact_us {
     display: grid;
     justify-content: center;
-    grid-template-columns: minmax(150px, 500px);
-
+    grid-template-columns: minmax(150px, 90vw);
 }
 
 @media (max-width: 480px) {
@@ -28,9 +26,16 @@
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 481px) and (max-width: 1023px) {
     .wrapper {
         margin: 0 15px;
+    }
+
+    .services,
+    .selected_services,
+    .contact_info,
+    .contact_us {
+        grid-template-columns: minmax(300px, 90vw);
     }
 }
 
@@ -39,14 +44,10 @@
         margin: 0 40px;
     }
 
-
     .services,
     .selected_services,
     .contact_info,
-    .contact_us
-    {
-        display: grid;
-        justify-content: center;
+    .contact_us {
         grid-template-columns: 1000px;
     }
 }
@@ -54,18 +55,5 @@
 @media (min-width: 1440px) {
     .wrapper {
         margin: 0 100px;
-    }
-}
-
-@media (max-width: 768px) {
-    .services,
-    .selected_services,
-    .contact_info,
-    .contact_us
-    {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: minmax(150px, 700px);
-
     }
 }

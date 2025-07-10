@@ -35,9 +35,8 @@
 .header h1 {
     color: var(--textColor);
     font-weight: 600;
-    font-size: clamp(1rem, 4vw, 2.2rem);
+    font-size: var(--font-size-hero);
 }
-
 
 .buttons {
     display: flex;
@@ -46,7 +45,7 @@
 
 .clearBtn {
     background-color: #ff3b3b;
-    color: white;
+    color: var(--primaryWhite);
     padding: 8px 16px;
     border: none;
     border-radius: 8px;
@@ -61,7 +60,7 @@
 
 .closeBtn {
     background-color: #555;
-    color: white;
+    color: var(--primaryWhite);
     padding: 8px 16px;
     border: none;
     border-radius: 8px;
@@ -81,12 +80,9 @@
 .total {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: var(--font-size-md);
     padding: 1rem;
     color: var(--textColor);
     border-top: 1px solid var(--primaryGrey);
     margin-top: 1rem;
 }
-
-
-

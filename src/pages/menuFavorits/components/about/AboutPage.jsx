@@ -8,43 +8,42 @@ const WrapperPage = () => {
             <section id="about" className={styles.wrapper__section}>
                 <div className={styles.wrapper__text_center}>
                     <h2 className={styles.wrapper__title}>The Virtual Table</h2>
-                    <hr className={styles.wrapper__divider} />
-                    <p className={styles.wrapper__intro}>
-                        Welcome to <strong>The Virtual Table</strong>, a proudly Canadian restaurant celebrating local flavors and culinary traditions from coast to coast.
-                        Founded in Toronto in 2021, our mission is to serve authentic dishes made from fresh, regional ingredients — all with a modern twist.
+                        <p className={styles.wrapper__intro}>
+                        Welcome to <strong>The Virtual Table</strong>, a proudly Canadian eatery that brings bold flavors, seasonal ingredients, and a digital-first dining experience together.
+                        Born in Toronto in 2021, we specialize in handcrafted dishes — from fresh juices and gourmet pizzas to wholesome breakfasts and premium meats.
                     </p>
                 </div>
 
                 <div className={styles.wrapper__grid}>
                     <div className={styles.wrapper__card}>
                         <FaCanadianMapleLeaf className={styles.wrapper__icon} />
-                        <h3 className={styles.wrapper__card_title}>True Canadian Cuisine</h3>
+                        <h3 className={styles.wrapper__card_title}>Canadian Spirit</h3>
                         <p className={styles.wrapper__card_text}>
-                            From classic poutine and butter tarts to bannock and tourtière — we serve a flavorful journey across Canada's provinces.
+                            We embrace Canada's diversity with a menu inspired by local produce, classic dishes, and cultural fusion — from coast to plate.
                         </p>
                     </div>
 
                     <div className={styles.wrapper__card}>
                         <FaHamburger className={styles.wrapper__icon} />
-                        <h3 className={styles.wrapper__card_title}>Modern Comfort Foods</h3>
+                        <h3 className={styles.wrapper__card_title}>From Brunch to Dinner</h3>
                         <p className={styles.wrapper__card_text}>
-                            Our chefs reinvent North American classics like burgers, sandwiches, and smoked brisket — always fresh, always satisfying.
+                            Discover comforting breakfasts, hearty sandwiches, fresh salads, and hand-tossed pizzas — crafted with passion and precision.
                         </p>
                     </div>
 
                     <div className={styles.wrapper__card}>
                         <FaFish className={styles.wrapper__icon} />
-                        <h3 className={styles.wrapper__card_title}>Sea to Table</h3>
+                        <h3 className={styles.wrapper__card_title}>Fresh from the Grill</h3>
                         <p className={styles.wrapper__card_text}>
-                            Enjoy Atlantic salmon, Nova Scotia lobster rolls, and West Coast fish tacos — responsibly sourced and cooked to perfection.
+                            Enjoy flame-grilled meats, trout, and seafood — responsibly sourced and perfectly seasoned for every taste.
                         </p>
                     </div>
 
                     <div className={styles.wrapper__card}>
                         <FaIceCream className={styles.wrapper__icon} />
-                        <h3 className={styles.wrapper__card_title}>Desserts & Ice Cream</h3>
+                        <h3 className={styles.wrapper__card_title}>Sweet Moments</h3>
                         <p className={styles.wrapper__card_text}>
-                            Treat yourself to local maple ice cream, Nanaimo bars, and seasonal fruit desserts — handmade and unforgettable.
+                            End your meal with signature desserts — from panna cotta to waffles and fresh fruit — all made in-house daily.
                         </p>
                     </div>
                 </div>

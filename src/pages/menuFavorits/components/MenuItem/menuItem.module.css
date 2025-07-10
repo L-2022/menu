@@ -10,7 +10,6 @@
 .wrapper__text_center {
   max-width: 1200px;
   margin-top: 1rem;
-  /*margin: 0 auto;*/
   text-align: center;
 }
 
@@ -28,7 +27,7 @@
 
 .category_title {
   font-size: var(--font-size-named-servise);
-  font-family: var(--font-family-title);
+  font-family: var(--font-family-raleway);
   color: var(--textColor);
   font-weight: 700;
   margin-bottom: 40px;
@@ -53,7 +52,6 @@
   gap: 20px;
   justify-content: center;
 }
-/* ===== end MenuItem.jsx ===== */
 
 
 /* ===== DishCard.jsx ===== */
@@ -89,8 +87,6 @@
   font-family: var(--font-family-title);
 }
 
-
-/* === start menu info */
 .menu__info {
   text-align: justify;
   color: var(--primaryGrey);
@@ -101,71 +97,61 @@
   font-weight: 600;
 }
 
-.dish__weight {
-
-}
-
 .dish__ingredients {
   font-family: var(--font-family-description);
 }
 
-.dish__count {
-
-}
-
-.dish__size {
-
-}
-
-
 .menu__price_counter {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-between;
+  height: 35px;
 }
 
 .menu__price {
   font-weight: bold;
   color: var(--color-logo);
   font-size: 1.1rem;
-  /*margin-top: 0.5rem;*/
+  white-space: nowrap;
+  min-width: 60px;
 }
 
-.rate {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: right;
-  padding: 2px 5px;
-  background-color: var(--primary-logo_black);
-  color: var(--textColor);
-  border-radius: 4px;
+.menu__counter_wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
-/* ===== end DishCard.jsx ===== */
 
+.menu__nutrition_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  white-space: nowrap;
+}
 
+.rate,
 .item__rate {
   position: absolute;
   top: 10px;
   right: 5px;
-  font-size: 14px;
+  font-size: var(--font-size-small);
   line-height: 18px;
   text-align: right;
   padding: 2px 5px;
-  background-color: rgb(153, 0, 0);
-  color: rgb(255, 255, 255);
+  color: var(--textColor);
   border-radius: 4px;
 }
 
-/* ===== NutritionInfo.jsx ===== */
-.menu__nutrition_wrapper {
-  /*margin-top: 10px;*/
-  display: flex;
-  justify-content: space-evenly;
+.rate {
+  background-color: var(--primary-logo_black);
 }
 
+.item__rate {
+  background-color: rgb(153, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+
+/* ===== NutritionInfo.jsx ===== */
 .menu__nutrition_button {
   background-color: var(--primaryButtonColor);
   color: var(--primaryWhite);
@@ -175,6 +161,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.5rem 0.8rem;
+
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .menu__nutrition_button:hover {
@@ -191,9 +181,6 @@
   border-radius: 0.5rem;
   font-size: 0.9rem;
   color: #333;
-  /*max-height: 0;*/
-  /*overflow: hidden;*/
-  /*opacity: 0;*/
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
@@ -203,34 +190,8 @@
   overflow: visible;
 }
 
-/* --- Start Counter styles --- */
 
-.menu__price_counter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  height: 35px;
-}
-
-.menu__price {
-  white-space: nowrap;
-  font-weight: bold;
-  min-width: 60px; /* щоб не стрибала ширина */
-}
-
-.menu__counter_wrapper {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.menu__nutrition_wrapper {
-  white-space: nowrap;
-}
-
-/* --- Start Counter block --- */
-
+/* ===== Counter ===== */
 .menu__counter {
   display: flex;
   align-items: center;
@@ -241,27 +202,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ddd;
+  background-color: var(--counter-button-bg, #ddd);
   border: none;
   border-radius: 6px;
   width: 40px;
   height: 40px;
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .counter__button:hover {
-  background-color: #ccc;
+  background-color: var(--counter-button-hover-bg, #ccc);
 }
 
 .counter__value {
   min-width: 40px;
   text-align: center;
-  /*font-size: 1.5rem;*/
   font-size: clamp(1.2rem, 4vw, 2.2rem);
   color: var(--color-accent);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .counter__add_button {
@@ -277,19 +237,14 @@
 }
 
 .counter__add_button:hover {
-  background-color: var(--primaryButtonHoverColor, #c53b29);
+  background-color: var(--primaryButtonHoverColor);
 }
 
-/* --- End Counter styles --- */
-
-
-
-
-/* ===== Badges (optional, global) ===== */
+/* ===== Badges ===== */
 .badge {
   display: inline-block;
   padding: 2px 8px;
-  font-size: 0.75rem;
+  font-size: var(--font-size-small);
   border-radius: 12px;
   font-weight: bold;
   text-transform: uppercase;
@@ -308,18 +263,16 @@
 .badgeLimited {
   background-color: #dc3545;
 }
-/* ===== end Badges ===== */
 
+/* ===== Responsive ===== */
 
-/* Small devices (smartphones, 0 - 479px) */
-@media (max-width: 479px) {
+/* Smartphones */
+@media (max-width: 425px) {
   .menu__card {
-    /*padding: 10px;*/
-    font-size: 14px;
+    font-size: var(--font-size-small);
   }
 
   .menu__image {
-    width: 100%;
     height: auto;
   }
 
@@ -328,25 +281,7 @@
   }
 }
 
-/* Medium devices (landscape phones, small tablets, 480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-  .menu__card {
-    /*padding: 12px;*/
-    font-size: 15px;
-  }
-
-  .menu__image {
-    width: 100%;
-    height: auto;
-  }
-
-  .menu__dish_name {
-    font-size: 18px;
-  }
-}
-
-/* Tablets (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 426px) and (max-width: 767px) {
   .menu__group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -354,12 +289,11 @@
   }
 
   .menu__dish_name {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-/* Laptops (1024px - 1439px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .menu__group {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -367,19 +301,18 @@
   }
 
   .menu__dish_name {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
-/* Large desktops (1440px and up) */
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .menu__group {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
 
   .menu__dish_name {
-    font-size: 24px;
+    font-size: 22px;
   }
 }

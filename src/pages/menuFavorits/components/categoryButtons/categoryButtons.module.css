@@ -15,8 +15,9 @@
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
+    font-size: var(--font-size-body);
+    font-family: var(--font-family-raleway);
     transition: background-color 0.3s;
-
 }
 
 .filter_button:hover {

@@ -84,15 +84,10 @@
 
 .filter_button {
   text-align: left;
+  font-family: var(--font-family-raleway);
+
 }
 
-/*.activeLink {*/
-/*  color: var(--secondaryButtonColor);*/
-/*}*/
-
-/*.inactiveLink {*/
-/*  color: var(--textColor);*/
-/*}*/
 
 .navList a:hover {
   color: var(--color-accent);
