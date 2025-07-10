@@ -281,7 +281,7 @@
   }
 }
 
-@media (min-width: 426px) and (max-width: 767px) {
+@media (min-width: 768px) {
   .menu__group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -293,7 +293,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 1023px) {
   .menu__group {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -305,7 +305,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .menu__group {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
