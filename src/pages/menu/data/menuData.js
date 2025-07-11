@@ -36,6 +36,7 @@ export const menuData = [
                 ingredients: 'Fresh trout grilled over an open fire, seasoned with herbs and lemon butter',
                 weight: '320 g',
                 top__rate: 'chef’s special',
+                color_top_rate: ' #417257',
                 quantityOptions: '1 portion',
                 diameter: null,
                 nutrition: {

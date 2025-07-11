@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './menuItem.module.css';
 import Counter from './Counter';
 import {menuData, otherInfo} from "../../data/menuData.js";
@@ -6,6 +6,13 @@ import {menuData, otherInfo} from "../../data/menuData.js";
 
 const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false }) => {
     const [showNutrition, setShowNutrition] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleNutrition = (e) => {
         e.stopPropagation();
@@ -17,14 +24,22 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                     className={styles.menu__card}
                     onClick={() => !isInCart && openModal(dish)}
             >
-                {dish.top__rate && <div className={styles.item__rate}>{dish.top__rate}</div>}
+                {dish.top__rate && (
+                        <div
+                                className={styles.item__rate}
+                                style={{ backgroundColor: dish.color_top_rate  }}
+                        >
+                            {dish.top__rate}
+                        </div>
+                )}
+
                 <img src={dish.imgSrc} alt={dish.title} className={styles.menu__image} />
                 <h1 className={styles.menu__dish_name}>{dish.title}</h1>
 
                 <div className={styles.menu__info}>
                     <div className={styles.menu__price_counter}>
                         {dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight} </div>}
-                        {dish.nutrition && !isInCart && (
+                        {dish.nutrition && !isInCart && !isDesktop && (
                                 <div className={styles.menu__nutrition_wrapper}>
                                     <button
                                             className={styles.menu__nutrition_button}
@@ -35,9 +50,6 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                 </div>
                         )}
                     </div>
-
-
-                    {/*{dish.weight && <div className={styles.dish__weight}><strong>Weight:</strong> {dish.weight} </div>}*/}
                     {dish.ingredients && <div className={styles.dish__ingredients}>{dish.ingredients}</div>}
                     {dish.count && <div className={styles.dish__count}><strong>Quantity:</strong> {dish.count}</div>}
                     {dish.size && <div className={styles.dish__size}><strong>Size:</strong> {dish.size}</div>}
@@ -58,19 +70,10 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                     changeQuantity(dish.id, -1);
                                 }}
                         />
-                        {/*{dish.nutrition && !isInCart && (*/}
-                        {/*        <div className={styles.menu__nutrition_wrapper}>*/}
-                        {/*            <button*/}
-                        {/*                    className={styles.menu__nutrition_button}*/}
-                        {/*                    onClick={toggleNutrition}*/}
-                        {/*            >*/}
-                        {/*                Nutrition*/}
-                        {/*            </button>*/}
-                        {/*        </div>*/}
-                        {/*)}*/}
                     </div>
 
-                    {dish.nutrition && showNutrition && !isInCart && (
+                    {/*{dish.nutrition && showNutrition && !isInCart && (*/}
+                    {dish.nutrition && (!isInCart && (showNutrition || isDesktop)) && (
                             <div className={styles.menu__nutrition}>
                                 <div className={styles.menu__nutrition_item}>
                                     <span>Calories: {dish.nutrition.calories}</span>
@@ -86,6 +89,7 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                 </div>
                             </div>
                     )}
+
                 </div>
             </div>
     );

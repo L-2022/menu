@@ -29,10 +29,6 @@ const MenuItem = () => {
         setSelectedDish(dish);
     };
 
-    const closeModal = () => {
-        setSelectedDish(null);
-    };
-
     return (
             <>
                 <div className={styles.wrapper__text_center}>
@@ -67,24 +63,24 @@ const MenuItem = () => {
                     ))}
                 </div>
 
-                {selectedDish && (
-                        <div className={styles.modalBackdrop} onClick={closeModal}>
-                            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                                <h3>{selectedDish.title}</h3>
-                                <img src={selectedDish.imgSrc} alt={selectedDish.title} style={{ maxWidth: '100%' }} />
-                                <p>{selectedDish.ingredients}</p>
-                                <p><strong>Price: </strong>{selectedDish.price}</p>
-                                <div style={{ marginTop: '1rem' }}>
-                                    <button onClick={() => changeQuantity(selectedDish.id, -1)}>-</button>
-                                    <span style={{ margin: '0 1rem' }}>
-                                {quantities[selectedDish.id] || 0}
-                            </span>
-                                    <button onClick={() => changeQuantity(selectedDish.id, 1)}>+</button>
-                                </div>
-                                <button onClick={closeModal} style={{ marginTop: '1rem' }}>Close</button>
-                            </div>
-                        </div>
-                )}
+                {/*{selectedDish && (*/}
+                {/*        <div className={styles.modalBackdrop} onClick={closeModal}>*/}
+                {/*            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>*/}
+                {/*                <h3>{selectedDish.title}</h3>*/}
+                {/*                <img src={selectedDish.imgSrc} alt={selectedDish.title} style={{ maxWidth: '100%' }} />*/}
+                {/*                <p>{selectedDish.ingredients}</p>*/}
+                {/*                <p><strong>Price: </strong>{selectedDish.price}</p>*/}
+                {/*                <div style={{ marginTop: '1rem' }}>*/}
+                {/*                    <button onClick={() => changeQuantity(selectedDish.id, -1)}>-</button>*/}
+                {/*                    <span style={{ margin: '0 1rem' }}>*/}
+                {/*                {quantities[selectedDish.id] || 0}*/}
+                {/*            </span>*/}
+                {/*                    <button onClick={() => changeQuantity(selectedDish.id, 1)}>+</button>*/}
+                {/*                </div>*/}
+                {/*                <button onClick={closeModal} style={{ marginTop: '1rem' }}>Close</button>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*)}*/}
             </>
     );
 };

@@ -39,6 +39,20 @@ import fish_steak_thumb from '../images/menu/Main Dishes/fish_steak_thumb.jpg';
 // Starters/
 import fancy_toast_thumb from '../images/menu/Starters/fancy_toast_thumb.jpg';
 
+const topRateChefSpecial = 'chef’s special';
+const topRateSpicyHit = 'spicy hit';
+const topRateBestseller = 'bestseller';
+const topRateVegetarian = 'vegetarian';
+const topRatePremium = 'premium';
+
+const colorAccent = '#EF4934';
+const colorSuccess = '#417257';
+const colorWarning = '#FFC107';
+const colorGreen = '#4CAF50';
+const colorPurple = '#6F42C1';
+
+
+
 export const menuData = [
     {
         id: 105,
@@ -52,6 +66,8 @@ export const menuData = [
                 ingredients: 'Toasted sourdough, avocado spread, cherry tomatoes, poached egg, herbs',
                 weight: '180 g',
                 diameter: null,
+                top__rate: topRateChefSpecial,
+                color_top_rate: colorAccent,
                 quantityOptions: '1 slice',
                 nutrition: {
                     calories: '320 kcal',
@@ -239,6 +255,8 @@ export const menuData = [
                 ingredients: 'Tomato sauce, mozzarella, spicy pepperoni, oregano',
                 weight: '450 g',
                 diameter: '30 cm',
+                top__rate: topRatePremium,
+                color_top_rate: colorWarning,
                 quantityOptions: '1 pizza',
                 nutrition: {
                     calories: '810 kcal',
@@ -431,6 +449,8 @@ export const menuData = [
                 title: 'Caesar salad with shrimp',
                 imgSrc: caesar_shrimp_thumb,
                 fullImgSrc: caesar_shrimp_thumb,
+                top__rate: topRateVegetarian,
+                color_top_rate: colorGreen,
                 price: '15',
                 ingredients: 'Romaine lettuce, grilled shrimp, Parmesan, Caesar dressing, croutons',
                 weight: '260 g',
@@ -479,6 +499,8 @@ export const menuData = [
                 title: 'Caesar salad with chicken',
                 imgSrc: caesar_chicken_thumb,
                 fullImgSrc: caesar_chicken_thumb,
+                top__rate: topRateVegetarian,
+                color_top_rate: colorGreen,
                 price: '16',
                 ingredients: 'Fresh salad mix, grilled chicken, Parmesan, croutons, tomatoes, cucumbers',
                 weight: '375 g',

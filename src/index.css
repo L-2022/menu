@@ -170,7 +170,6 @@ button {
 @media (hover: none) and (pointer: coarse) {
   button:focus,
   button:active {
-    /* на мобілках – не залишає сірого */
     background-color: inherit;
     color: inherit;
     outline: none;
