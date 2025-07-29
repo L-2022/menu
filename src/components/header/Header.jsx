@@ -119,7 +119,7 @@ const Header = () => {
                                                         setIsReservationOpen(true);
                                                     }}
                                             >
-                                                Reserve Table
+                                                Reserve
                                             </button>
                                         </li>
                                     </ul>

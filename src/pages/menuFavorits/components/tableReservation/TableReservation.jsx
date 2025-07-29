@@ -196,17 +196,20 @@ const TableReservation = ({ isOpen, onClose }) => {
                                             min={workingHours.weekdays.open}
                                             max={workingHours.weekdays.close - 1}
                                     />
-                                        <DatePicker
-                                                selected={formData.date ? new Date(formData.date) : null}
-                                                onChange={(date) => {
-                                                    const isoDate = date.toISOString().split('T')[0];
-                                                    setFormData((prev) => ({ ...prev, date: isoDate }));
-                                                }}
-                                                minDate={new Date()}
-                                                maxDate={new Date(new Date().setMonth(new Date().getMonth() + 3))}
-                                                dateFormat="EEE, MMM d"
-                                                className={styles.datepicker_input}
-                                        />
+                                        <div className={styles.wrapper__time}>
+                                            <DatePicker
+                                                    selected={formData.date ? new Date(formData.date) : null}
+                                                    onChange={(date) => {
+                                                        const isoDate = date.toISOString().split('T')[0];
+                                                        setFormData((prev) => ({ ...prev, date: isoDate }));
+                                                    }}
+                                                    minDate={new Date()}
+                                                    maxDate={new Date(new Date().setMonth(new Date().getMonth() + 3))}
+                                                    dateFormat="EEE, MMM d"
+                                                    className={styles.datepicker_input}
+                                            />
+                                        </div>
+
                                 </div>
                             </div>
                             <textarea
