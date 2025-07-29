@@ -1,0 +1,60 @@
+/* ===== Counter ===== */
+.menu__counter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.counter__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--counter-button-bg);
+    color: var(--color-accent);
+    border: none;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.counter__button:hover {
+    background-color: var(--counter-button-bg);
+    color: var(--color-accent);
+}
+
+.counter__value {
+    /*width: 50px;*/
+    min-width: 40px;
+    /*max-width: 60px;*/
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    color: var(--color-accent);
+    margin-bottom: 5px;
+}
+
+.counter__add_button {
+    background-color: var(--primaryButtonColor);
+    color: var(--primaryWhite);
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 30px;
+}
+
+
+
+@media (min-width: 768px) {
+    .counter__add_button:hover {
+        background-color: var(--primaryButtonHoverColor);
+    }
+    .counter__button:hover {
+        background-color: var(--color-accent);
+        color: var(--textColor);
+    }
+}

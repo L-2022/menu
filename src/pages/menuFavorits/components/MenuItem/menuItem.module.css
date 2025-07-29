@@ -1,6 +1,6 @@
 /* ===== MenuItem.jsx ===== */
 .menu {
-  display: flex;
+  /*display: flex;*/
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
@@ -181,70 +181,72 @@
   border-radius: 0.5rem;
   font-size: 0.9rem;
   color: #333;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
-.menu__nutrition.visible {
+.menu__nutrition_visible {
   max-height: 200px;
   opacity: 1;
   overflow: visible;
 }
 
+/*!* ===== Counter ===== *!*/
+/*.menu__counter {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 0.75rem;*/
+/*}*/
 
-/* ===== Counter ===== */
-.menu__counter {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
+/*.counter__button {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  background-color: var(--counter-button-bg, #ddd);*/
+/*  border: none;*/
+/*  border-radius: 6px;*/
+/*  width: 40px;*/
+/*  height: 40px;*/
+/*  font-size: var(--font-size-lg);*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
 
-.counter__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--counter-button-bg, #ddd);
-  border: none;
-  border-radius: 6px;
-  width: 40px;
-  height: 40px;
-  font-size: var(--font-size-lg);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/*.counter__button:hover {*/
+/*  background-color: var(--counter-button-hover-bg, #ccc);*/
+/*}*/
 
-.counter__button:hover {
-  background-color: var(--counter-button-hover-bg, #ccc);
-}
+/*.counter__value {*/
+/*  min-width: 40px;*/
+/*  text-align: center;*/
+/*  font-size: clamp(1.2rem, 4vw, 2.2rem);*/
+/*  color: var(--color-accent);*/
+/*  margin-bottom: 5px;*/
+/*}*/
 
-.counter__value {
-  min-width: 40px;
-  text-align: center;
-  font-size: clamp(1.2rem, 4vw, 2.2rem);
-  color: var(--color-accent);
-  margin-bottom: 5px;
-}
+/*.counter__add_button {*/
+/*  background-color: var(--primaryButtonColor);*/
+/*  color: var(--primaryWhite);*/
+/*  padding: 0.5rem 0.8rem;*/
+/*  border: none;*/
+/*  border-radius: 0.5rem;*/
+/*  font-size: 0.9rem;*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.3s ease;*/
+/*  margin: 0 30px;*/
+/*}*/
 
-.counter__add_button {
-  background-color: var(--primaryButtonColor);
-  color: var(--primaryWhite);
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 0 30px;
-}
-
-.counter__add_button:hover {
-  background-color: var(--primaryButtonHoverColor);
-}
+/*.counter__add_button:hover {*/
+/*  background-color: var(--primaryButtonHoverColor);*/
+/*}*/
 
 /* ===== Badges ===== */
 .badge {
   display: inline-block;
   padding: 2px 8px;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-button);
   border-radius: 12px;
   font-weight: bold;
   text-transform: uppercase;
@@ -269,7 +271,7 @@
 /* Smartphones */
 @media (max-width: 425px) {
   .menu__card {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-button);
   }
 
   .menu__image {
@@ -306,11 +308,17 @@
 }
 
 @media (min-width: 1440px) {
+  .menu {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
   .menu__group {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+
 
   .menu__dish_name {
     font-size: 22px;

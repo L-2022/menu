@@ -58,6 +58,7 @@
   --font-size-xl: clamp(1.75rem, 4vw, 2.5rem);
 
   --font-size-body: var(--font-size-sm);
+  --font-size-button: var(--font-size-sm);
   --font-size-title: var(--font-size-lg);
   --font-size-subtitle: var(--font-size-md);
   --font-size-caption: var(--font-size-xs);
@@ -119,6 +120,7 @@
 html, body {
   height: 100%;
   font-family: var(--font-family-playfair);
+  background-color: var(--bgColor);
 }
 
 ol, ul {
@@ -229,3 +231,5 @@ input:-webkit-autofill:active {
 .swal2-cancel {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+

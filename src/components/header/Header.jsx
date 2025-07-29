@@ -2,11 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import ThemeSwitcher from '../themeSwitcher';
 import styles from './Header.module.css';
 import { menuData, navBtn } from '../../pages/menuFavorits/data/menuData.js';
+import TableReservation from '../../pages/menuFavorits/components/tableReservation';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isReservationOpen, setIsReservationOpen] = useState(false);
     const [visible, setVisible] = useState(true);
-    const prevScrollPosRef = useRef(window.scrollY); // ← заміна useState
+    const prevScrollPosRef = useRef(window.scrollY);
+
     const categories = menuData.map(({ category }) => ({ id: category, label: category }));
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -64,57 +67,70 @@ const Header = () => {
         };
     }, []);
 
-
     return (
-            <header className={`${styles.header} ${!visible ? styles.header__hidden : ''}`}>
-                <div className={styles.container}>
-                    <div className={styles.header__inner_left}>
-                        <div className={styles.header__logo}>
-                            <p className={styles.logo}>The Virtual Table</p>
-                        </div>
-                    </div>
-                    <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle menu">
-                        {isMenuOpen ? '✕' : '☰'}
-                    </button>
-
-
-                    <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
-                        <div className={styles.menuGrid}>
-                            {isMenuOpen && (
-                                    <div className={styles.filtersColumn}>
-                                        <ul className={styles.navList}>
-
-                                            {categories.map(({ id, label }) => (
-                                                    <li key={id}>
-                                                        <button
-                                                                className={styles.filter_button}
-                                                                onClick={() => handleAnyClick(id)}
-                                                        >
-                                                            {label}
-                                                        </button>
-                                                    </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                            )}
-
-                            <div className={styles.navColumn}>
-
-                                <ul className={styles.navList}>
-                                    <li className={styles.wrapper__theme_switcher} onClick={() => setIsMenuOpen(false) }>
-                                        <ThemeSwitcher />
-                                    </li>
-                                    {navBtn.map(({ id, label }) => (
-                                            <li key={id}>
-                                                <button onClick={() => handleAnyClick(id)}>{label}</button>
-                                            </li>
-                                    ))}
-                                </ul>
+            <>
+                <header className={`${styles.header} ${!visible ? styles.header__hidden : ''}`}>
+                    <div className={styles.container}>
+                        <div className={styles.header__inner_left}>
+                            <div className={styles.header__logo}>
+                                <p className={styles.logo}>The Virtual Table</p>
                             </div>
                         </div>
-                    </nav>
-                </div>
-            </header>
+
+                        <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle menu">
+                            {isMenuOpen ? '✕' : '☰'}
+                        </button>
+
+                        <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
+                            <div className={styles.menuGrid}>
+                                {isMenuOpen && (
+                                        <div className={styles.filtersColumn}>
+                                            <ul className={styles.navList}>
+                                                {categories.map(({ id, label }) => (
+                                                        <li key={id}>
+                                                            <button
+                                                                    className={styles.filter_button}
+                                                                    onClick={() => handleAnyClick(id)}
+                                                            >
+                                                                {label}
+                                                            </button>
+                                                        </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                )}
+
+                                <div className={styles.navColumn}>
+                                    <ul className={styles.navList}>
+                                        <li className={styles.wrapper__theme_switcher} onClick={() => setIsMenuOpen(false)}>
+                                            <ThemeSwitcher />
+                                        </li>
+
+                                        {navBtn.map(({ id, label }) => (
+                                                <li key={id}>
+                                                    <button onClick={() => handleAnyClick(id)}>{label}</button>
+                                                </li>
+                                        ))}
+
+                                        <li>
+                                            <button
+                                                    onClick={() => {
+                                                        setIsMenuOpen(false);
+                                                        setIsReservationOpen(true);
+                                                    }}
+                                            >
+                                                Reserve Table
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+
+                <TableReservation isOpen={isReservationOpen} onClose={() => setIsReservationOpen(false)} />
+            </>
     );
 };
 

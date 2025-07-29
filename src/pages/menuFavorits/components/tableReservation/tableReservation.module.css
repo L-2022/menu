@@ -1,0 +1,184 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 400;
+}
+
+.modal_content {
+    display: grid;
+    background: var(--bgColor);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    min-height: 70%;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.modal_close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: #555;
+    color: var(--color-accent);
+    font-weight: bold;
+    padding: 3px 15px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.table_reservation__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.table_reservation__fields {
+    display: grid;
+    gap: 25px;
+}
+
+.table_reservation__input,
+.table_reservation__textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: var(--font-size-basic);
+    border: 1px solid var(--colorGreenDark);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--textColor);
+    box-sizing: border-box;
+}
+
+.table_reservation__textarea {
+    resize: none;
+    height: 120px;
+}
+
+.table_reservation__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.table_reservation__error_messages {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: var(--font-size-basic);
+    text-align: center;
+    height: 20px;
+}
+.wrapper_selectors {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+.wrapper__data_time {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.datepicker_input {
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    font-size: var(--font-size-title);
+    border-radius: 8px;
+    border: 1px solid var(--colorGreenDark);
+    color: var(--color-accent);
+    text-align: center;
+    min-width: 100%;
+    /*max-width: 50%;*/
+}
+
+.selector_label_center {
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--font-size-basic);
+    margin-bottom: -5px;
+    color: var(--textColor);
+}
+
+.selector_label {
+    font-weight: 600;
+    font-size: var(--font-size-title);
+    color: var(--textColor);
+}
+
+@media (max-width: 480px) {
+    .modal_content {
+        width: 95%;
+    }
+
+    .table_reservation__actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .wrapper__data_time {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .modal_close {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        background-color: #555;
+        color: var(--color-accent);
+        font-weight: bold;
+        padding: 0 15px;
+        font-size: 2rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .modal_content {
+        padding: 20px;
+    }
+
+    .table_reservation__input,
+    .table_reservation__textarea {
+        font-size: var(--font-size-basic);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .table_reservation__fields {
+        margin: 0 15%;
+        grid-template-columns: 1fr;
+    }
+
+    .table_reservation__input,
+    .table_reservation__textarea {
+        font-size: var(--font-size-lg);
+        border: 2px solid var(--colorGreenDark);
+    }
+
+    .table_reservation__error_messages {
+        font-size: var(--font-size-title);
+    }
+}
+
+

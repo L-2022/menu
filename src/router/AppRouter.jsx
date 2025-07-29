@@ -7,11 +7,13 @@ import MenuPageEx1 from '../pages/menuFavorits/MenuPage.jsx';
 import NotFoundPage from '../pages/notFound';
 import Layout from '../components/layout';
 import { routes } from './routes';
+import HomePage from "../pages/home/index.js";
 
 const AppRouter = () => {
     return (
             <Router>
                 <Routes>
+                    <Route path={'/'} element={<HomePage />} />
                     <Route element={<Layout />}>
                         <Route path={routes.menu_example_1} element={<MenuPageEx1 />} />
                         <Route path={routes.menu_example_2} element={<MenuPage />} />

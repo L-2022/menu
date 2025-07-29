@@ -1,0 +1,214 @@
+.wrapper {
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    min-height: 100vh; /* щоб не обрізало, але дозволяло скрол */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.title {
+    font-size: var(--font-size-title);
+    text-align: center;
+    font-family: var(--font-family-title);
+    margin-bottom: 2rem;
+    color: var(--textColor);
+}
+
+.menuList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menuCard {
+    text-decoration: none;
+    padding: 1.5rem;
+    border: 2px solid var(--borderColor);
+    border-radius: 12px;
+    background-color: var(--dropdownBackground);
+    color: var(--textColor);
+    font-family: var(--font-family-content);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menuCard:hover {
+    transform: scale(1.02);
+    background-color: var(--backButton);
+}
+
+.menuTitle {
+    font-size: var(--font-size-title);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family-title);
+}
+
+.menuDescription {
+    /*font-size: var(--font-size-body);*/
+    font-family: var(--font-family-description);
+    color: var(--textColorCategory);
+}
+
+.presentation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--borderColor);
+    font-family: var(--font-family-content);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+    color: var(--textColor);
+    background-color: var(--bgColor);
+    word-break: break-word;
+}
+
+.presentation h2,
+.presentation h3 {
+    font-family: var(--font-family-title);
+    margin-top: 1.5rem;
+    color: var(--textColor);
+}
+
+.presentation ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+    margin: 1rem 0;
+}
+
+.presentation a {
+    color: var(--color-accent, #007BFF); /* додай змінну, якщо ще немає */
+    text-decoration: underline;
+}
+
+
+/*footer */
+.container {
+    color: var(--primaryWhite);
+    text-align: center;
+    width: 100%;
+    /*background-color: var(--colorBackgroundMain);*/
+    background-color: var(--bgColor);
+    font-size: var(--font-size-subtitle);
+}
+
+.columnsWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    text-align: center;
+}
+
+.text {
+    font-size: var(--font-size-title);
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    font-family: var(--font-family-title);
+    color: var(--textColor);
+}
+
+.socialList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.socialItem {
+    display: inline-block;
+}
+
+.telItem a {
+    color: var(--textColor);
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+    font-family: var(--font-family-content);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.telItem a:hover {
+    color: var(--color-accent);
+}
+
+.socialLink {
+    color: var(--textColor);
+    font-size: 2.2rem;
+    transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+    color: var(--color-accent);
+}
+
+.workingHours {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 1.6;
+    color: var(--textColor);
+    font-family: var(--font-family-content);
+}
+
+.map {
+    /*width: 100%;*/
+    /*max-width: 300px;*/
+    /*height: 200px;*/
+    color: var(--textColor);
+    border: 0;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.address {
+    margin-top: 5px;
+    color: var(--textColor);
+    font-family: var(--font-family-content);
+    font-size: var(--font-size-subtitle);
+}
+
+.copyright {
+    margin-top: 10px;
+    color: var(--textColor);
+    font-family: var(--font-family-content);
+}
+
+@media (min-width: 768px) {
+    .columnsWrapper {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .column {
+        text-align: left;
+        flex: 1;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .map {
+        max-width: 100%;
+        height: 150px;
+    }
+}

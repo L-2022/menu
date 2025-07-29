@@ -2,6 +2,7 @@ import React from 'react';
 import AboutPage from './components/about';
 import MenuList from './components/MenuList';
 import ContactUs from "./components/contactUs/index.js";
+import TableReservation from "./components/tableReservation/index.js";
 import ContactInfo from "./components/contactInfo";
 import SelectedService from "./components/selectedService/index.js";
 import styles from './menu.module.css';
@@ -19,12 +20,15 @@ const menuPageEx1 = () => {
                 <section id="contact" className={styles.contact_us}>
                     <ContactUs />
                 </section>
+                <section id="reservation" className={styles.contact_us}>
+                    <TableReservation />
+                </section>
                 {/*<section id="contact" className={styles.contact_info}>*/}
                 {/*    <ContactInfo />*/}
                 {/*</section>*/}
-                <section id="selected" className={styles.selected_services}>
-                    <SelectedService />
-                </section>
+                {/*<section id="selected" className={styles.selected_services}>*/}
+                {/*    <SelectedService />*/}
+                {/*</section>*/}
             </div>
     );
 };

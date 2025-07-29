@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './cartModal.module.css';
 import DishCard from '../menuItem/DishCard';
 import { useDispatch } from 'react-redux';
-import {menuData} from '../../data/menuData.js';
 import Swal from 'sweetalert2';
 
 import { increaseQuantity, decreaseQuantity, clearCart } from '../../../../store/menu/cartSlice';
@@ -72,7 +71,7 @@ const CartModal = ({ isOpen, onClose, quantities, menuData }) => {
                         <h1>Your Orders</h1>
                         <div className={styles.buttons}>
                             <button className={styles.clearBtn} onClick={handleClearCart}>Clear All</button>
-                            <button className={styles.closeBtn} onClick={onClose}>Close</button>
+                            <button className={styles.closeBtn} onClick={onClose}>&times;</button>
                         </div>
                     </div>
                     <div className={styles.menu__group}>

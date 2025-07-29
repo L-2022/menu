@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './menuItem.module.css';
-import Counter from './Counter';
+import Counter from '../../../../components/counter';
 import {menuData, otherInfo} from "../../data/menuData.js";
 
 
@@ -69,13 +69,16 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                     e.stopPropagation();
                                     changeQuantity(dish.id, -1);
                                 }}
+                                min={0}
+                                showZeroButton={true}
+                                zeroLabel="Add"
                         />
                     </div>
 
                     {/*{dish.nutrition && showNutrition && !isInCart && (*/}
                     {dish.nutrition && (!isInCart && (showNutrition || isDesktop)) && (
-                            <div className={styles.menu__nutrition}>
-                                <div className={styles.menu__nutrition_item}>
+                            <div className={`${styles.menu__nutrition} ${showNutrition || isDesktop ? styles.menu__nutrition_visible : ''}`}>
+                            <div className={styles.menu__nutrition_item}>
                                     <span>Calories: {dish.nutrition.calories}</span>
                                 </div>
                                 <div className={styles.menu__nutrition_item}>

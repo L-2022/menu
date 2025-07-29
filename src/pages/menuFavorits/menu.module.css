@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 10px;
+    grid-template-columns: minmax(150px, 90vw);
 }
 
 .about {
@@ -15,26 +16,25 @@
 .selected_services,
 .contact_info,
 .contact_us {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: minmax(150px, 90vw);
+    justify-self: center;
+    width: 100%;
 }
 
 @media (max-width: 480px) {
     .wrapper {
-        margin: 0 15px;
+        margin: 0 5px;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .wrapper {
+        margin: 0 5px;
+        grid-template-columns: minmax(300px, 90vw);
     }
 }
 
-@media (min-width: 481px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
         margin: 0 15px;
-    }
-
-    .services,
-    .selected_services,
-    .contact_info,
-    .contact_us {
         grid-template-columns: minmax(300px, 90vw);
     }
 }
@@ -42,12 +42,6 @@
 @media (min-width: 1024px) {
     .wrapper {
         margin: 0 40px;
-    }
-
-    .services,
-    .selected_services,
-    .contact_info,
-    .contact_us {
         grid-template-columns: 1000px;
     }
 }
