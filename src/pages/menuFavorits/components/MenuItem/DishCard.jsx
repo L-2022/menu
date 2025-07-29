@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './menuItem.module.css';
 import Counter from '../../../../components/counter';
-import {menuData, otherInfo} from "../../data/menuData.js";
+import {otherInfo} from "../../data/menuData.js";
 
 
 const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false }) => {
@@ -74,8 +74,6 @@ const DishCard = ({ dish, quantity, changeQuantity, openModal, isInCart = false 
                                 zeroLabel="Add"
                         />
                     </div>
-
-                    {/*{dish.nutrition && showNutrition && !isInCart && (*/}
                     {dish.nutrition && (!isInCart && (showNutrition || isDesktop)) && (
                             <div className={`${styles.menu__nutrition} ${showNutrition || isDesktop ? styles.menu__nutrition_visible : ''}`}>
                             <div className={styles.menu__nutrition_item}>
